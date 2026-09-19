@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Dodo OS repo manifest.
+
+  This is a LOCAL MANIFEST: it does not replace the AOSP manifest, it is added
+  on top of it. During Stage 1 we sync plain AOSP. In Stage 2 we drop this file
+  into `.repo/local_manifests/` inside the AOSP checkout so `repo sync` also
+  pulls the OnePlus N100 device tree, kernel, and vendor blobs.
+
+  Device: OnePlus Nord N100 (BE2013)
+  SoC:    Qualcomm Snapdragon 460 (bengal / SM4250)
+  Codename: TODO - confirm in Stage 2 (community uses "billie" / "billie2")
+-->
+<manifest>
+
+  <!--
+    Remotes we pull device support from. These are placeholders to be
+    verified/replaced in Stage 2 once the exact codename & maintainer repos
+    are confirmed. Vanilla AOSP itself comes from Google's default manifest.
+  -->
+  <remote name="github" fetch="https://github.com/" />
+
+  <!--
+    ==== Stage 2: uncomment & correct these once the codename is confirmed ====
+
+    <project path="device/oneplus/billie2"
+             name="TODO-org/device_oneplus_billie2"
+             remote="github" revision="main" />
+
+    <project path="kernel/oneplus/sm4250"
+             name="TODO-org/kernel_oneplus_sm4250"
+             remote="github" revision="main" />
+
+    <project path="vendor/oneplus/billie2"
+             name="TODO-org/vendor_oneplus_billie2"
+             remote="github" revision="main" />
+  -->
+
+</manifest>

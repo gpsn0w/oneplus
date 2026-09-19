@@ -1,0 +1,10 @@
+# Build output
+out/
+*.img
+*.zip
+# Local repo checkout (huge - never commit AOSP source)
+aosp/
+.repo/
+# Editor / OS
+*.swp
+.DS_Store
