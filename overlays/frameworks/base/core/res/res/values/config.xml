@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  🦤 Dodo OS — privacy-first framework defaults.
+
+  This is a RESOURCE OVERLAY: it overrides values in AOSP's
+  frameworks/base/core/res/res/values/config.xml at build time, WITHOUT
+  editing AOSP itself. These flip the phone to private-by-default.
+
+  It compiles only once AOSP source is present (Stage 1). Kept here so the
+  moment we build, Dodo OS already behaves differently from stock Android.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- Wi-Fi: do NOT wake up radios to scan for networks in the background
+         (less tracking, better battery). User can still scan manually. -->
+    <bool name="config_wifi_background_scan_support">false</bool>
+
+    <!-- Do not send the device's location to the carrier for Wi-Fi calling
+         unless the user explicitly enables it. -->
+    <bool name="config_carrier_wfc_ims_available">false</bool>
+
+    <!-- Disable the "send usage & diagnostics data" pathway by default. -->
+    <bool name="config_enableGeofenceOverlay">false</bool>
+
+    <!-- Captive-portal / connectivity check: point away from Google's default
+         server (connectivitycheck.gstatic.com) to a neutral endpoint so the
+         OS does not phone home to Google on every network join.
+         (Uses a privacy-respecting provider; user-changeable later.) -->
+    <string name="config_captivePortalHttpsUrl" translatable="false">https://connectivity-check.grapheneos.network/generate_204</string>
+    <string name="config_captivePortalHttpUrl" translatable="false">http://connectivity-check.grapheneos.network/generate_204</string>
+
+</resources>

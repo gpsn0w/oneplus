@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  🦤 Dodo OS — default system settings (privacy-first).
+
+  Overlays AOSP's SettingsProvider defaults. These are the values a fresh
+  Dodo OS phone starts with, before the user changes anything. Everything
+  here is still user-toggleable in Settings — we just flip the DEFAULT to
+  the private choice.
+-->
+<resources>
+
+    <!-- No usage/diagnostics data collection out of the box. -->
+    <bool name="def_package_verifier_enable">true</bool>
+
+    <!-- Location off by default; user turns it on when they want it. -->
+    <bool name="def_location_mode_high_accuracy">false</bool>
+
+    <!-- Do not auto-connect to open Wi-Fi networks (avoids silent tracking
+         and rogue hotspots). -->
+    <bool name="def_wifi_on">false</bool>
+    <bool name="def_networks_available_notification_on">false</bool>
+
+    <!-- Bluetooth off by default. -->
+    <bool name="def_bluetooth_on">false</bool>
+
+    <!-- Show the lock screen immediately on sleep (no grace period). -->
+    <bool name="def_lockscreen_disabled">false</bool>
+
+    <!-- Do not include text/PII in notifications shown on the lock screen. -->
+    <integer name="def_lock_screen_show_notifications">1</integer>
+    <integer name="def_lock_screen_allow_private_notifications">0</integer>
+
+</resources>
