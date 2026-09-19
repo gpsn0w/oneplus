@@ -15,7 +15,11 @@ Inspired by GrapheneOS's USB-C port control.
 
 ## New setting
 `Settings.Global.DODO_USB_LOCKED_MODE` — int:
-`0 = always allow`, `1 = charging-only when locked` (default), `2 = charging-only always`.
+`0 = always allow`, `1 = charging-only when locked` (**default — always on**), `2 = charging-only always`.
+
+> Dodo OS ships with this protection **enabled by default** (mode 1). The user
+> can loosen it, but out of the box the port is always charging-only while
+> locked — no action required from the user.
 
 ## Code changes (Android 15; confirm paths after sync)
 
