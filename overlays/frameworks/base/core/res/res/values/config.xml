@@ -29,4 +29,22 @@
     <string name="config_captivePortalHttpsUrl" translatable="false">https://connectivity-check.grapheneos.network/generate_204</string>
     <string name="config_captivePortalHttpUrl" translatable="false">http://connectivity-check.grapheneos.network/generate_204</string>
 
+    <!-- ==== Sandboxed user profiles ==== -->
+
+    <!-- Allow up to 8 isolated user profiles (stock often caps at 4).
+         Each profile is a separate sandbox with its own apps and data. -->
+    <integer name="config_multiuserMaximumUsers">8</integer>
+
+    <!-- Enable the multi-user UI so users can be added/switched from Settings
+         and the quick-settings user switcher. -->
+    <bool name="config_enableMultiUserUI">true</bool>
+
+    <!-- Let a background user's apps be fully stopped when you switch away,
+         so a profile can't run/track in the background (stronger isolation). -->
+    <bool name="config_multiuserDelayUserDataLocking">false</bool>
+
+    <!-- Guest profile is ephemeral: everything it did is wiped when the guest
+         session ends. -->
+    <bool name="config_guestUserEphemeral">true</bool>
+
 </resources>
