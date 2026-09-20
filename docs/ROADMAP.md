@@ -9,10 +9,10 @@ ROM for the OnePlus Nord N100 (BE2013).
 - [x] Configure git
 - [x] Create project scaffold + GitHub repo
 
-## Stage 1 — Build vanilla AOSP for the emulator ⏳ NEXT
+## Stage 1 — Build vanilla AOSP for the emulator ⏳ IN PROGRESS
 Goal: prove the whole toolchain works and the machine can complete a build,
 *before* dealing with device-specific complexity.
-- [ ] `repo init` + `repo sync` the AOSP source (~250 GB, several hours)
+- [x] `repo init` + `repo sync` the AOSP source (android-15.0.0_r1, ~97 GB) ✅
 - [ ] `lunch` an emulator target (e.g. `sdk_phone_x86_64`)
 - [ ] Full `m` build
 - [ ] Boot the resulting image in the Android emulator
