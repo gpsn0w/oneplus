@@ -1,6 +1,26 @@
-# Patch 03 — Auto-wipe after N failed unlock attempts 🦤
+# Patch 03 — Auto-wipe (failed attempts + days of inactivity) 🦤
 
-**Goal (user's words):** if someone fails to unlock the phone **more than a
+**Goal (user's words):** the phone wipes itself when
+1. someone fails to unlock **more than a number the user chooses**, AND
+2. the phone is **not unlocked for a number of DAYS the user chooses** —
+   silently, **without any warning**.
+
+## Two triggers, two mechanisms
+
+| Trigger | Handled by | Warning? |
+|---------|-----------|----------|
+| N failed unlock attempts | **Built-in** (this patch) | Warning shown when *enabling* |
+| X days without a successful unlock | **Wasted app** (pre-installed) — it does exactly this natively | No warning (as requested) |
+
+The pre-installed **Wasted** app already implements "wipe after the device has
+been locked / not unlocked for X time", triggered silently. Dodo OS ships it and
+the user sets the number of days + grants it Device Admin. So we do **not**
+re-implement the days-based wipe in the framework — we use the dedicated,
+audited app for it. This patch covers only the failed-attempts trigger.
+
+---
+
+**Failed-attempts detail:** if someone fails to unlock the phone **more than a
 number the user chooses**, the phone wipes itself.
 
 Stock AOSP can wipe after failed attempts only via the enterprise Device-Admin

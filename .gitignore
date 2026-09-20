@@ -8,3 +8,6 @@ aosp/
 # Editor / OS
 *.swp
 .DS_Store
+
+# Third-party prebuilt app binaries (kept local)
+*.apk

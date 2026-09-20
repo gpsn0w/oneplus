@@ -1,0 +1,43 @@
+// 🦤 Dodo OS — pre-installed apps (prebuilt, third-party signed)
+// Each app ships on the /product partition. They are user-removable unless
+// noted. All are already signed by their developers, so presigned: true.
+
+android_app_import {
+    name: "FDroid",
+    apk: "FDroid/FDroid.apk",
+    presigned: true,
+    product_specific: true,
+    dex_preopt: {
+        enabled: false,
+    },
+}
+
+android_app_import {
+    name: "AuroraStore",
+    apk: "AuroraStore/AuroraStore.apk",
+    presigned: true,
+    product_specific: true,
+    dex_preopt: {
+        enabled: false,
+    },
+}
+
+android_app_import {
+    name: "Wasted",
+    apk: "Wasted/Wasted.apk",
+    presigned: true,
+    product_specific: true,
+    dex_preopt: {
+        enabled: false,
+    },
+}
+
+android_app_import {
+    name: "DuressApp",
+    apk: "Duress/Duress.apk",
+    presigned: true,
+    product_specific: true,
+    dex_preopt: {
+        enabled: false,
+    },
+}
